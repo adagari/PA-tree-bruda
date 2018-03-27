@@ -4,8 +4,8 @@ public class Customer{
   private String tin;
   private String last;
   private String first;
-  Private int margin;
-  Private boolean drip;
+  private int margin;
+  private boolean drip;
   private boolean futures;
   
   public Customer(String nbr, String id){
