@@ -83,9 +83,6 @@ public class Customer{
   public String describeCustomer(){
   }
   
-  public String describeCustomer(){
-  }
-  
   public String toString(){
   }
 }
