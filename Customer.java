@@ -101,6 +101,20 @@ public class Customer{
   } 
   
   public String describeCustomer(){
+    StringBuilder objInfo = new StringBuilder(String.format("Customer %s, %s %s.%n  The account carries a margin limit of $%d.00.", 
+                                                             getCustNumber(), getFirst(), getLast(), getMargin()));
+    if(getDrip() == true){
+      objInfo.append("\n  The account will reinvest dividens as recieved.");
+    }else{
+      objInfo.append("\n  The account will not reinvest dividens as recieved.");
+    }
+    
+    if(getFutures() == true){
+      objInfo.append("\n  The account is authorized to trade in futures contracts.");
+    }else{
+      objInfo.append("\n  The account is not authorized to trade in futures contracts.");
+    }                                                        
+    return objInfo.toString();
   }
   
   public String toString(){
