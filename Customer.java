@@ -8,24 +8,28 @@ public class Customer{
   private boolean drip;
   private boolean futures;
   
-  public Customer(String nbr, String id){
-    this.custNumber = nbr;
-    this.tin = id;
+  public Customer(String nbr, String id) throws CustomerException{
+    setCustNumber(nbr);
+    setTin(id);
   }
   
   public Customer(String nbr, String id, String lName, String fName,
-                  int lim, boolean reUp, boolean fAuth){
-    this.custNumber = nbr;
-    this.tin = id;
-    this.last = lName;
-    this.first = fName;
-    this.margin = lim;
-    this.drip = reUp;
-    this.futures = fAuth;
+                  int lim, boolean reUp, boolean fAuth) throws CustomerException{
+    setCustNumber(nbr);
+    setTin(id);
+    setLast(lName);
+    setFirst(fName);
+    setMargin(lim);
+    setDrip(reUp);
+    setFutures(fAuth);
   }
   
   public void setCustNumber(String custNumber){
-    this.custNumber = custNumber;
+    if(custNumber.matches("[0-9][0-9][1-9]\\d{3}[1-9]")){
+      this.custNumber = custNumber;
+    }else{
+      throw new CustomerException("Customer number must be 7 digits in length and greater than 10000.");
+    }
   }
   
   public void setTin(String tin){
