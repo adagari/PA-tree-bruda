@@ -9,23 +9,42 @@ public abstract class Security implements CostBasis {
 
     // constructor five parameters
     public Security(String nbr, int date, double price,
-                    double qty, String sym) {
-        this.custNumber = nbr;  // set field custNumber
-        this.purchDt = date;    // set field purchDt
-        this.purchPrc = price;  // set field purchPrc
-        this.shares = qty;      // set field shares
-        this.symbol = sym.toUpperCase();      // set field symbol
+                    double qty, String sym) throws SecurityException{
+        setCustNumber(nbr);  // set field custNumber
+        setPurchDT(date);    // set field purchDt
+        setPurchPrc(price);  // set field purchPrc
+        setShares(qty);      // set field shares
+        setSymbol(sym.toUpperCase());      // set field symbol
     }
 
     // setCustNumber one String parameter
-    public void setCustNumber(String custNumber) {
-        this.custNumber = custNumber;
+    public void setCustNumber(String custNumber) throws SecurityException{
+        if(custNumber.matches("[0-9][0-9][1-9]\\d{3}[1-9]")){
+            this.custNumber = custNumber;
+        }else{
+            throw new SecurityException("Customer number must be 7 digits in length and greater than 10000");
+        }
     }
 
     // setPurchDt one int parameter
-    public void setPurchDT(int purchDt) {
-        this.purchDt = purchDt;
+  public void setPurchDT(int purchDt) throws SecurityException{
+    
+    String date = String.valueOf(purchDt);
+    
+    if(date.length() != 7){
+      throw new SecurityException("Date must be entered in the format YYYYDDD");
     }
+    
+    String year = date.substring(0,4);
+    String day = date.substring(4,7);     
+    
+    if(Integer.parseInt(year) >= 1901 && Integer.parseInt(year) <= 9999 &&
+       Integer.parseInt(day) >= 001 && Integer.parseInt(day) <= 365) {
+      this.purchDt = purchDt;
+    }else{
+      throw new SecurityException("Purchase year must be > 1900; Purchase day must be 001 to 365, inclusive." + Integer.parseInt(year) + Integer.parseInt(day));
+    }
+  }
 
     // setPurchPrc one double parameter
     public void setPurchPrc(double purchPrc) {
