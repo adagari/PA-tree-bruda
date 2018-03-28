@@ -42,7 +42,7 @@ public abstract class Security implements CostBasis {
        Integer.parseInt(day) >= 001 && Integer.parseInt(day) <= 365) {
       this.purchDt = purchDt;
     }else{
-      throw new SecurityException("Purchase year must be > 1900; Purchase day must be 001 to 365, inclusive." + Integer.parseInt(year) + Integer.parseInt(day));
+      throw new SecurityException("Purchase year must be > 1900; Purchase day must be 001 to 365, inclusive.");
     }
   }
 
