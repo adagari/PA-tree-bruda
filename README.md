@@ -7,7 +7,8 @@ Assigned Duties:<br/>
 Adam Garibay:<br/>
 ~~CustomerException.java<br/>
 SecurityException.java<br/>~~
-Customer.java
+Customer.java<br/>
+Security.java
 
 Megan F:<br/>
 TBD<br/>
