@@ -24,28 +24,44 @@ public class Customer{
     setFutures(fAuth);
   }
   
-  public void setCustNumber(String custNumber){
+  public void setCustNumber(String custNumber) throws CustomerException{
     if(custNumber.matches("[0-9][0-9][1-9]\\d{3}[1-9]")){
       this.custNumber = custNumber;
     }else{
-      throw new CustomerException("Customer number must be 7 digits in length and greater than 10000.");
+      throw new CustomerException("Customer number must be 7 digits in length and greater than 10000." + toString());
     }
   }
   
-  public void setTin(String tin){
-  this.tin = tin;
+  public void setTin(String tin) throws CustomerException{
+    if(tin.matches("\\d{9}")){
+      this.tin = tin;
+    }else{
+      throw new CustomerException("Tax Identifier must be 9 digits in length." + toString());
+    }
   }
   
-  public void setLast(String last){
-    this.last = last;
+  public void setLast(String last) throws CustomerException{
+    if(last.matches("[a-zA-z]+(['-][a-zA-z]+)*")){
+      this.last = last;
+    }else{
+      throw new CustomerException("Last name must not be null or blank." + toString());
+    }
   }
   
-  public void setFirst(String first){
-    this.first = first;
+  public void setFirst(String first) throws CustomerException{
+    if(first.matches("[A-Z][a-zA-Z]*")){
+      this.first = first;
+    }else{
+      throw new CustomerException("First name must not be null or blank." + toString());
+    }
   }
   
-  public void setMargin(int margin){
-    this.margin = margin;
+  public void setMargin(int margin) throws CustomerException{
+    if(margin >= 0){
+      this.margin = margin;
+    }else{
+      throw new CustomerException("The margin value must be zero or greater.");
+    }
   }
   
   public void setDrip(boolean drip){
@@ -88,5 +104,9 @@ public class Customer{
   }
   
   public String toString(){
+    return String.format("%nOffered values:%n  Customer number: %s %n  Tax Id: %s%n"
+                           + "  Last Name: %s%n  First Name: %s%n  Margin: %d%n  DRIP:"
+                           + "%b%n  Futures: %b", getCustNumber(), getTin(), getLast()
+                           , getFirst(), getMargin(), getDrip(), getFutures());
   }
 }
