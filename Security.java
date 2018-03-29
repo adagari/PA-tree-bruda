@@ -86,6 +86,12 @@ public abstract class Security implements CostBasis {
         return symbol;
     }
 
+    public String offeredValues(){
+    return String.format("%nOffered Values:%n  Customer number: %s%n  Purchase Date: %d%n  Share price:  %f"
+                         + "%n  Number shares:  %f%n  Symbol: %s%n", getCustNumber(), getPurchDt(), getPurchPrc()
+                         , getShares(), getSymbol);
+    }
+    
     // toString returns StringBuilder objInfo
     public String toString() {
 
