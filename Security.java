@@ -16,7 +16,7 @@ public abstract class Security implements CostBasis {
     this.shares = qty;      // set field shares
     this.symbol = sym.toUpperCase();      // set field
     
-    if(!custNumber.matches("\\d{7}") && Integer.parseInt(custNumber) < 10000)
+    if(!custNumber.matches("\\d{7}") || Integer.parseInt(custNumber) < 10000)
       throw new SecurityException("Customer number must be 7 digits in length and greater than 10000" + offeredValues());
     
     String convertDate = String.valueOf(purchDt);
@@ -79,10 +79,13 @@ public abstract class Security implements CostBasis {
     return symbol;
   }
   
-  public String offeredValues(){
-    return String.format("%nOffered Values:%n  Customer number: %s%n  Purchase Date: %d%n  Share price:  %f"
-                           + "%n  Number shares:  %f%n  Symbol: %s%n", getCustNumber(), getPurchDt(), getPurchPrc()
-                           , getShares(), getSymbol());
+  public String offeredValues(){ 
+    
+    return String.format("%nOffered Values:%n  Customer number: %s%n"
+                           + "  Purchase Date: %d%n  Share price:  %f"
+                           + "%n  Number shares:  %f%n  Symbol: %s%n",
+                         getCustNumber(), getPurchDt(), getPurchPrc(),
+                         getShares(), getSymbol());
   }
   
   // toString returns StringBuilder objInfo
