@@ -27,7 +27,7 @@ public class Test_SecurityHierarchy
                             "M,2110001,2017050,15.63,200,CARAM,MMf,0.003,Y,false",
                             "S,1000020,2017019,43.75,250,LTC,NYSE,false,0,0.0",
                             "S,10001,2001222,23.25,0.025,BKHT,NASDAQ,false,0,0.0",
-                            "S,2100000,2001222,23.25,0.025,BKHT,NASDAQ,false,5,0.0",
+                            "S,2100000,2001222,23.25,0.025,BKHT,NASDAQ,false,2,0.0",
                              // MutualFund test case template
                           };
      /*
