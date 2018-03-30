@@ -1,4 +1,4 @@
-public class MutualFund extends Security 
+public class MutualFund extends Security //subclass of security 
 {
   private String type;    //identify general MutualFund type 
   private double admin;   //administrative fee cap
