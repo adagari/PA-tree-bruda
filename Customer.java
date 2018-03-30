@@ -23,7 +23,7 @@ public class Customer{
     this.drip = reUp;
     this.futures = fAuth;
     
-    if(!custNumber.matches("\\d{7}") && Integer.parseInt(custNumber) > 10000)
+    if(!custNumber.matches("\\d{7}") || Integer.parseInt(custNumber) < 10000)
       throw new CustomerException
       ("Customer number must be 7 digits in length and greater than 10000." + toString());
     
