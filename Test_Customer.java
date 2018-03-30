@@ -19,7 +19,10 @@ public class Test_Customer
    /*
     * The following array holds the test cases. It may be enlarged as needed/desired.
     */
-     String[] dataArray = {"1111111,999999999,LastName,FirstName,0,false,false"      // test case template
+     String[] dataArray = {"1000001,123456789,Mitchell,Pete,2000,true,false",
+                           "1000002,321654987,Blackwood,Charlotte,-1,false,false",
+                           "1009999,nnnnnnnnn,Social,Nonnum,5000,true,false",
+                           "2009999,951263874,MissingFirst,,50000,true,false"// test case template
                           };
 
      /*
