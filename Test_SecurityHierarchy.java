@@ -21,8 +21,14 @@ public class Test_SecurityHierarchy
    public static void main(String[] args)
    {          
      String[] dataArray = { 
-                            "S,1111111,19000101,0.0,0.0,SYMBOL,MARKET,false,0,0.0",    // Stock test case template
-                            "M,1111111,19000101,0.0,0.0,SYMBOL,TYPE,0.0,P,false"       // MutualFund test case template
+                            "M,10001,2001222,23.25,200,BKHT,MM,0.0024,A,false",    // Stock test case template
+                            "M,1100000,1001222,23.25,200,BKHT,MM,0.001,M,false",
+                            "M,1000010,2001001,36352.15,200,BKHT,Growth,0.032,Q,true",
+                            "M,2110001,2017050,15.63,200,CARAM,MMf,0.003,Y,false",
+                            "S,1000020,2017019,43.75,250,LTC,NYSE,false,0,0.0",
+                            "S,10001,2001222,23.25,0.025,BKHT,NASDAQ,false,0,0.0",
+                            "S,2100000,2001222,23.25,0.025,BKHT,NASDAQ,false,5,0.0",
+                             // MutualFund test case template
                           };
      /*
       *  The enhanced for loop will take each String in the above array, determine which type of object is to be
