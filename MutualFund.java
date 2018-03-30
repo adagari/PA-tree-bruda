@@ -21,7 +21,7 @@ public class MutualFund extends Security {
     if(Character.toUpperCase(rptPeriod) != 'A' 
          && Character.toUpperCase(rptPeriod) != 'Q' 
          && Character.toUpperCase(rptPeriod) != 'M')
-      throw new SecurityException("The reporting period must be A, Q, or M." + offeredValues());
+      throw new SecurityException("The reporting period must be A, Q, or M." + offeredValues() + additionalInfo());
   }
   
   // setType one String parameter
@@ -64,11 +64,11 @@ public class MutualFund extends Security {
     return mgmt;
   }
   
-  public String offeredValues(){
-    return String.format("%nOffered Values:%n  Customer number: %s%n  Purchase Date: %d%n  Share price:  %f"
-                           + "%n  Number shares:  %f%n  Symbol: %s%n", getCustNumber(), getPurchDt(), getPurchPrc()
-                           , getShares(), getSymbol());
+  public String additionalInfo(){
+    return String.format("  Type: %s%n  Admin cost: %f%n  Reporting Period: %c%n  Managment: %b%n",
+                         getType(), getAdmin(), getRptPeriod(), getMgmt());
   }
+
   
   // toString returns StringBuilder objInfo
   public String toString() {
@@ -80,22 +80,22 @@ public class MutualFund extends Security {
     objInfo.append(String.format(" %.3f shares of %s were%n", getShares(), getSymbol()));
     objInfo.append(String.format("purchased on %d for $%.2f per share.%n", getPurchDt(), getPurchPrc()));
     objInfo.append(String.format("This is a %s fund.%n", getType()));
-    objInfo.append(String.format("\tAdmin cost are capped at %.6f.%n", getAdmin()));
+    objInfo.append(String.format("  Admin cost are capped at %.6f.%n", getAdmin()));
     
     // if else to append the reporting period
     if(Character.toUpperCase(getRptPeriod()) == 'A') {
-      objInfo.append("\tReporting cycle is Annual.\n");
+      objInfo.append("  Reporting cycle is Annual.\n");
     } else if(Character.toUpperCase(getRptPeriod()) == 'Q') {
-      objInfo.append("\tReporting cycle is Quarterly.\n");
+      objInfo.append("  Reporting cycle is Quarterly.\n");
     } else if(Character.toUpperCase(getRptPeriod()) == 'M') {
-      objInfo.append("\tReporting cycle is Monthly.\n");
+      objInfo.append("  Reporting cycle is Monthly.\n");
     }
     
     // if else to append fund management
     if(getMgmt() == true) {
-      objInfo.append("\tThe fund is managed actively.\n");
+      objInfo.append("  The fund is managed actively.\n");
     } else if(getMgmt() == false) {
-      objInfo.append("\tThe fund is managed passively.\n");
+      objInfo.append("  The fund is managed passively.\n");
     }
     return objInfo.toString();
   }
