@@ -1,5 +1,5 @@
-// interface CostBasis
-public interface CostBasis {
-    // Returns the cost basis for the security.
-    public double calcCost();
-}
+public interface CostBasis 
+{
+    public double calcCost(); //returns the cost basis for the security
+
+}//end public interface CostBasis
