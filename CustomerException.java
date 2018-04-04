@@ -1,10 +1,15 @@
-public class CustomerException extends Exception{
+public class CustomerException extends Exception
+{
+ public CustomerException(String msg)
+ {
+   super(msg);
+
+ }//end constructor
  
- public CustomerException(String msg){
-  super(msg);
- }
- 
- public CustomerException(String msg, Throwable cause){
-  super(msg, cause);
- }
-}
+ public CustomerException(String msg, Throwable cause)
+ {
+   super(msg, cause);
+
+ }//end constructor
+
+}//end public class CustomerException extends Exception
