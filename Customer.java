@@ -10,8 +10,8 @@ public class Customer
 
   public Customer(String nbr, String id) throws CustomerException
   {
-    setCustNumber(nbr);
-    setTin(id);
+    this.custNumber = nbr;
+    this.tin = id;
 
   }//end constructor
 
