@@ -1,3 +1,4 @@
+
 public class MutualFund extends Security //subclass of security 
 {
   private String type;    //identify general MutualFund type 
@@ -9,30 +10,29 @@ public class MutualFund extends Security //subclass of security
                     String sort, double cost, char rpt, boolean style) throws SecurityException
   {
     super(nbr, date, price, qty, sym);  // superclass constructor to pass on values for nbr, date, price, qty, and sym
-  
+
     this.type = sort;      // set value for type
     this.admin = cost;     // set value for admin
     this.rptPeriod = rpt;  // set value for rptPeriod
     this.mgmt = style;     // set value for mgmt
-    
+
     /*throwing SecurityException if customer number is not seven digits in length and is less than 10000*/
 
     if(!getCustNumber().matches("\\d{7}") || Integer.parseInt(getCustNumber()) < 10000)
     {
       throw new SecurityException("Customer number must be 7 digits in length and greater than 10000" + offeredValues());
-    
+
     }//end if statement
-    
-    /*throwing SecurityException if reporting period is not A, Q, or M*/
-    
+
+    /*throwing SecurityException if reporting period is not A, Q, or M*/ 
+
     if(Character.toUpperCase(rptPeriod) != 'A' && Character.toUpperCase(rptPeriod) != 'Q' && 
        Character.toUpperCase(rptPeriod) != 'M')
     {
-
       throw new SecurityException("The reporting period must be A, Q, or M." + offeredValues() + additionalInfo());
-    
+
     }//end if statement
-  
+
   }//end construcotr
 
   public void setType(String type) 
@@ -85,7 +85,7 @@ public class MutualFund extends Security //subclass of security
 
   public String additionalInfo()
   {
-    return String.format("\tType: %s%n  Admin cost: %f%n  Reporting Period: %c%n  Managment: %b%n",
+    return String.format("  Type: %s%n  Admin cost: %f%n  Reporting Period: %c%n  Managment: %b%n",
                          getType(), getAdmin(), getRptPeriod(), getMgmt());
 
   }//end public String additionalInfo
@@ -105,19 +105,19 @@ public class MutualFund extends Security //subclass of security
 
     if(Character.toUpperCase(getRptPeriod()) == 'A') 
     {
-      objInfo.append("  Reporting cycle is Annual.%n");
+      objInfo.append("  Reporting cycle is Annual.\n");
 
     }//end if statement 
-    
+
     else if(Character.toUpperCase(getRptPeriod()) == 'Q') 
     {
-      objInfo.append("  Reporting cycle is Quarterly.%n");
+      objInfo.append("  Reporting cycle is Quarterly.\n");
 
     }//end else if statement 
     
     else if(Character.toUpperCase(getRptPeriod()) == 'M') 
     {
-      objInfo.append("  Reporting cycle is Monthly.%n");
+      objInfo.append("  Reporting cycle is Monthly.\n");
 
     }//end else if statement
 
@@ -128,10 +128,10 @@ public class MutualFund extends Security //subclass of security
       objInfo.append("  The fund is managed actively.\n");
 
     }//end if statement
-    
+
     else if(getMgmt() == false) 
     {
-      objInfo.append("  The fund is managed passively.%n");
+      objInfo.append("  The fund is managed passively.\n");
 
     }//end else if statement
 
