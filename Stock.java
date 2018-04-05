@@ -17,22 +17,22 @@ public class Stock extends Security //subclass of Security class
 
     if(divDate < 0 || divDate > 4)
     {
-      throw new SecurityException("Allowed divident payment dates are 0-4." + offeredValues());
-    
+      throw new SecurityException("Allowed dividend payment dates are 0-4." + offeredValues());
+
     }//end if statement
     
     if(dividends == false && divAmount != 0)
     {
-      throw new SecurityException("Invalid input for dividen amount.");
-    
+      throw new SecurityException("Invalid input for dividend amount.");
+
     }//end if statement
 
     if(divDate < 0 || divDate > 4 && divAmount != 0)
     {
-      throw new SecurityException("Invalid input for dividen amount.");
+      throw new SecurityException("Invalid input for dividend amount.");
 
     }//end if statement
-    
+
   }//end constructor
 
   public void setExchange(String exchange) 
@@ -62,7 +62,7 @@ public class Stock extends Security //subclass of Security class
   public String getExchange() 
   {
     return exchange; //returning the value of exchange
-
+    
   }//end public String getExchange
 
   public boolean getDividends() 
@@ -101,10 +101,10 @@ public class Stock extends Security //subclass of Security class
                                    getDivAmount(), getDivDate()));
 
     }//end if statement 
-    
+
     else 
     {
-      objInfo.append("   This stock does not pay dividends.\n");
+      objInfo.append("   This stock does not pay dividends\n");
 
     }//end else statement    
     
