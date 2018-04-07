@@ -1,3 +1,7 @@
+/*Wes Eaton
+Meagan Folmar
+Adam Garibay*/
+
 public class CustomerException extends Exception
 {
  public CustomerException(String msg)
