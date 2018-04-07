@@ -1,3 +1,7 @@
+/*Wes Eaton
+Meagan Folmar
+Adam Garibay*/
+
 public class Customer
 {
   private String custNumber; //unique customer ID
