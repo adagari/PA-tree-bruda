@@ -1,3 +1,7 @@
+/*Wes Eaton
+Meagan Folmar
+Adam Garibay*/
+
 public class Stock extends Security //subclass of Security class
 {
   private String exchange;    //exchange stock is traded
