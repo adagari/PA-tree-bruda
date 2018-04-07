@@ -1,3 +1,7 @@
+/*Wes Eaton
+Meagan Folmar
+Adam Garibay*/
+
 public abstract class Security implements CostBasis //abstract class Security implements CostBasis
 {
   private String custNumber; //unique ID for customer
