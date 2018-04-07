@@ -1,4 +1,4 @@
- /*Wes Eaton
+ /*Wesley Eaton
 Meagan Folmar
 Adam Garibay*/
 
