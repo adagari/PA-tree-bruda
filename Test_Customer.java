@@ -1,4 +1,7 @@
-/*
+/*Wes Eaton
+Meagan Folmar
+Adam Garibay
+
  *   Test_Customer.java
  * 
  *   This test driver will allow for batch testing of the Customer class.
