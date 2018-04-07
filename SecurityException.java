@@ -1,3 +1,7 @@
+/*Wes Eaton
+Meagan Folmar
+Adam Garibay*/
+
 public class SecurityException extends Exception
 {
   public SecurityException(String msg)
