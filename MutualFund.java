@@ -1,3 +1,6 @@
+/*Wes Eaton
+Meagan Folmar
+Adam Garibay*/
 
 public class MutualFund extends Security //subclass of security 
 {
